@@ -32,6 +32,8 @@ else
     export EDITOR='nvim'
 fi
 
+export GIT_EDITOR=nvim
+
 # Compilation flags
 #export ARCHFLAGS="-arch x86_64 -O3 "
 

@@ -11,7 +11,8 @@ client.urgent    #CC241D #CC241D #3C3836 #CC241D #CC241D
 
 exec --no-startup-id polybar
 exec --no-startup-id picom -b
-exec --no-startup-id feh --bg-fill $HOME/wallpaper.jpg
+exec --no-startup-id feh --bg-fill $HOME/Pictures/wallpapers/saturn.png
+exec --no-startup-id "setxkbmap -layout us,hr -option 'grp:alt_shift_toggle'"
 
 set $mod Mod4
 
@@ -23,12 +24,14 @@ set $right l
 
 ### key bindings
 bindsym $mod+q kill
-bindsym $mod+t exec alacritty
+bindsym $mod+t exec kitty
 bindsym $mod+f exec firefox
 bindsym $mod+r exec dmenu_run
+bindsym $mod+Escape exec slock
+
+# Wallpaper stuff
 bindsym $mod+p exec feh --bg-fill --random $HOME/Documents/wallpapers
 bindsym $mod+Shift+p exec feh --bg-fill $HOME/wallpaper.jpg
-bindsym $mod+Escape exec slock
 
 # audio
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -63,16 +66,15 @@ bindsym $mod+$up    focus up
 bindsym $mod+$right focus right
 
 # move focused window
-bindsym $mod+Shift+$left  move left
-bindsym $mod+Shift+$down  move down
-bindsym $mod+Shift+$up    move up
-bindsym $mod+Shift+$right move right
+bindsym $mod+Control+$down  move down
+bindsym $mod+Control+$up    move up
+bindsym $mod+Control+$right move right
 
 # resize windows
-bindsym $mod+Control+$left  resize shrink width 2 px or 2 ppt
-bindsym $mod+Control+$down  resize grow height 2 px or 2 ppt
-bindsym $mod+Control+$up    resize shrink height 2 px or 2 ppt
-bindsym $mod+Control+$right resize grow width 2 px or 2 ppt
+bindsym $mod+Shift+$left  resize shrink width 2 px or 2 ppt
+bindsym $mod+Shift+$down  resize grow height 2 px or 2 ppt
+bindsym $mod+Shift+$up    resize shrink height 2 px or 2 ppt
+bindsym $mod+Shift+$right resize grow width 2 px or 2 ppt
 
 # drag floating windows: $mod + left mouse button
 floating_modifier $mod
